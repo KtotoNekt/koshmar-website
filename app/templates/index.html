@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  {% set favicon = url_for('static', filename='img/logo.png') %}
+  {% set title = gettext("Lair of Koshmar") %}
+
+  {% set github_btn %}
+    <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""><path d="M16 0C7.16533 0 0 7.164 0 16C0 23.0693 4.584 29.0667 10.9427 31.1827C11.7413 31.3307 12 30.8347 12 30.4133V27.4347C7.54933 28.4027 6.62267 25.5467 6.62267 25.5467C5.89467 23.6973 4.84533 23.2053 4.84533 23.2053C3.39333 22.212 4.956 22.2333 4.956 22.2333C6.56267 22.3453 7.408 23.8827 7.408 23.8827C8.83467 26.328 11.1507 25.6213 12.064 25.212C12.2067 24.1787 12.6213 23.472 13.08 23.0733C9.52667 22.6667 5.79067 21.2947 5.79067 15.1653C5.79067 13.4173 6.416 11.9907 7.43867 10.8707C7.27333 10.4667 6.72533 8.83867 7.59467 6.636C7.59467 6.636 8.93867 6.20667 11.996 8.276C13.272 7.92133 14.64 7.744 16 7.73733C17.36 7.744 18.7293 7.92133 20.008 8.276C23.0627 6.20667 24.404 6.636 24.404 6.636C25.2747 8.84 24.7267 10.468 24.5613 10.8707C25.588 11.9907 26.208 13.4187 26.208 15.1653C26.208 21.3107 22.4653 22.664 18.9027 23.06C19.476 23.556 20 24.5293 20 26.0227V30.4133C20 30.8387 20.256 31.3387 21.068 31.1813C27.4213 29.0627 32 23.0667 32 16C32 7.164 24.836 0 16 0Z"></path></svg>
+    <span>GitHub</span>
+  {% endset %}
+
+  {% set notabug_btn %}
+    <svg viewBox="0 0 32 32"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" style="--darkreader-inline-fill: currentColor;" data-darkreader-inline-fill=""><path d="M17.6925 1.16134C17.7262 1.06011 17.8331 0.981369 17.9399 1.00387C18.0243 1.02636 18.058 1.11635 18.0749 1.19508C18.3673 2.49986 18.4686 3.85525 18.2886 5.18814C18.193 4.56388 18.0974 3.94523 18.0074 3.32097C17.9737 2.88229 17.8668 2.44924 17.8049 2.01619C17.5012 3.20286 17.1244 4.38953 16.4608 5.42998C16.3933 5.54808 16.2977 5.64932 16.2752 5.78429C16.0784 8.197 15.8815 10.6097 15.6847 13.028C16.1852 13.253 16.5902 13.6636 16.7926 14.1753C18.3561 12.5275 19.8296 10.7841 21.0725 8.88876C23.9295 8.34323 26.5222 6.98783 29.1936 5.9024C29.9585 6.64477 30.7065 7.40964 31.3982 8.2195C31.6176 8.49507 31.865 8.75378 32 9.0856C31.0327 8.18013 30.0766 7.25216 29.1092 6.34107C27.2758 7.06657 25.6392 8.21387 23.8002 8.92813C23.1478 9.18683 22.4673 9.37242 21.7811 9.51302C21.6518 9.55239 21.4831 9.54114 21.4043 9.67612C21.0444 10.1654 20.7126 10.6772 20.3189 11.144C19.2728 12.6231 18.0974 14.001 17.0232 15.4576C17.0232 15.5026 17.0232 15.5532 17.0288 15.5982C18.3449 15.2158 19.644 14.7996 20.9544 14.4116C21.275 14.3778 21.6012 14.4059 21.9274 14.3891C22.113 14.3666 22.2536 14.5072 22.411 14.5803C23.7664 15.2945 25.2793 15.6376 26.7697 15.9188C27.0621 15.9863 27.3714 16.0088 27.6639 16.0988C27.8551 16.2225 28.0688 16.3406 28.1982 16.5318C28.8449 17.4035 29.4692 18.3484 29.6604 19.4338C29.2948 18.6071 28.7549 17.8647 28.1307 17.2179C28.0069 17.0998 27.9001 16.9367 27.7257 16.8861C25.8698 16.1831 23.9183 15.8119 21.9836 15.3901C21.6405 15.3226 21.3031 15.2102 20.9488 15.1877C20.6788 15.2552 20.4314 15.3789 20.1727 15.4745C18.9804 15.9244 17.7937 16.38 16.5958 16.8186C16.5002 16.8468 16.4945 16.9705 16.4552 17.0492C17.0851 17.1055 17.7206 17.1448 18.3392 17.2742C18.3898 17.2911 18.4798 17.2911 18.4798 17.3698C18.671 18.2134 19.0816 18.9895 19.5259 19.7263C19.8802 20.3224 20.2851 20.8848 20.6563 21.4697C20.7744 21.6666 20.9038 21.8634 20.9488 22.0884C20.9319 22.1165 20.8925 22.184 20.87 22.2121C21.2862 23.1457 21.5449 24.1468 21.6349 25.1647C21.6574 25.3728 21.6743 25.5753 21.7249 25.7777C21.6968 25.7271 21.6518 25.6821 21.6349 25.6259L21.6293 25.5809C21.6124 25.3334 21.5281 25.0916 21.4774 24.8498C21.275 24.1074 21.0556 23.3538 20.6395 22.7014C20.6001 22.5945 20.4482 22.6451 20.3976 22.5495C19.9365 21.9759 19.6665 21.2841 19.3291 20.6374C18.8904 19.7769 18.4855 18.8939 17.9006 18.1234C17.3381 17.9434 16.7757 17.7747 16.2133 17.5948C16.1796 17.6679 16.1515 17.741 16.1234 17.8141C16.3539 17.9041 16.5902 17.9772 16.8207 18.0616C16.5958 19.1639 16.4327 20.2718 16.2246 21.3741C16.1121 21.9196 16.0165 22.4708 15.8253 22.9995C15.769 23.1401 15.7072 23.3031 15.5497 23.3594C15.1841 24.3042 14.7736 25.2322 14.3687 26.1602C13.8794 27.2681 13.3845 28.3704 12.8502 29.4615C12.7152 29.7258 12.5915 29.9957 12.4171 30.2376C13.2045 27.9711 14.1943 25.7777 14.9929 23.5112C14.8804 23.1682 15.0042 22.8082 15.0885 22.4764C15.5047 21.0929 16.1177 19.7769 16.5564 18.399C16.3483 18.3146 16.1459 18.219 15.9378 18.1515C15.561 18.6183 15.3304 19.1864 14.9198 19.625C14.678 19.895 14.4249 20.1706 14.1156 20.3674C13.5813 20.7386 12.9964 21.0367 12.4059 21.3235C11.8097 21.5878 11.163 21.7959 10.505 21.7678C9.97629 21.7228 9.43076 21.526 9.09894 21.0985C8.58153 20.4461 8.37344 19.6138 8.26096 18.8039C8.09787 18.5846 7.90665 18.3765 7.82791 18.1065C7.6367 17.5666 7.76605 16.9311 8.14848 16.5037C8.24971 16.3743 8.39032 16.2956 8.5028 16.1775C8.75588 15.4689 9.18893 14.8334 9.71759 14.2935C9.01458 13.7985 8.35657 13.2305 7.57483 12.8593C6.57938 13.4442 5.65704 14.1416 4.7122 14.7996C3.45804 15.6938 2.17014 16.5712 0.713513 17.1111C0.584161 17.1336 0.595409 17.2742 0.58416 17.3698C0.544792 18.399 0.449184 19.4282 0.398567 20.4574C0.359199 20.8454 0.381696 21.2448 0.291711 21.6272C0.241095 21.8128 0.117366 21.9646 0.00488509 22.1165C-0.017611 21.1716 0.044253 20.2212 0.055501 19.2763C0.122989 18.1684 0.139862 17.0548 0.319831 15.9582C1.17468 15.6601 2.02391 15.3395 2.8394 14.9346C4.40288 14.1922 5.81451 13.1743 7.19802 12.1451C7.55796 12.1226 7.91227 12.2351 8.23847 12.3813C8.71089 12.5781 9.13831 12.8649 9.57136 13.1349C9.83569 13.298 10.0719 13.5061 10.3587 13.6354C10.4543 13.5904 10.5218 13.5061 10.6006 13.4386C9.86381 12.775 9.07082 12.1732 8.38469 11.4533C8.23284 11.3127 8.10911 11.144 7.95164 11.0146C7.01243 10.306 6.09571 9.55802 5.06089 8.98999C4.92029 8.93375 4.76844 8.945 4.62222 8.9225C3.79548 8.83252 2.98 8.66942 2.14764 8.58506C1.90581 8.56819 1.67522 8.5007 1.43339 8.51195C1.19718 8.51757 0.966594 8.42196 0.809121 8.24199C1.484 8.27011 2.15327 8.3601 2.82815 8.40509C3.59302 8.48383 4.36351 8.51757 5.12275 8.60756C5.85388 8.98999 6.53439 9.45678 7.24301 9.87859C7.81667 10.2104 8.39032 10.5647 9.02021 10.7784C9.14956 10.8234 9.28454 10.8515 9.42514 10.8684C9.86381 11.369 10.2406 11.937 10.7693 12.3532C10.9886 12.5163 11.1348 12.7581 11.2023 13.0224C11.7141 12.7019 12.3328 12.6569 12.9233 12.6287C12.6027 11.1946 12.2428 9.77735 11.8716 8.35447C11.8322 8.22512 11.7254 8.14076 11.6523 8.03391C10.9155 7.06657 10.4487 5.92489 9.9313 4.83383C9.60511 4.40078 9.28454 3.95648 9.02021 3.47844C8.95272 3.34909 8.87398 3.21973 8.86836 3.07351C9.32391 3.54593 9.85256 3.93961 10.3137 4.40078C10.4656 4.54701 10.5612 4.73822 10.668 4.91257C11.1461 5.7168 11.5454 6.56041 12.0178 7.36464C12.0966 7.51087 12.2034 7.64022 12.2596 7.7977C12.7489 9.43429 13.3676 11.0315 13.9131 12.6512C14.2281 12.6794 14.5374 12.7243 14.8467 12.7862C15.1729 10.4241 15.4429 8.05078 15.7915 5.69431C15.8815 5.40186 16.0671 5.14315 16.1852 4.86195C16.7645 3.64154 17.1694 2.37613 17.6925 1.16134V1.16134ZM9.0427 16.0706C8.77275 16.1325 8.51967 16.2675 8.3172 16.4587C7.78854 16.9424 7.68169 17.8085 8.08099 18.399C8.47468 19.0401 9.3689 19.2988 10.0438 18.9558C10.7018 18.6521 11.0674 17.8535 10.8593 17.1561C10.6624 16.3912 9.8132 15.8794 9.0427 16.0706ZM12.5296 16.633C12.2597 16.6949 12.0066 16.8299 11.8041 17.0211C11.2754 17.5048 11.1742 18.3652 11.5679 18.9614C11.9616 19.6025 12.8558 19.8612 13.5307 19.5182C14.1887 19.2145 14.5543 18.4159 14.3462 17.7185C14.1493 16.9592 13.3001 16.4418 12.5296 16.633Z"></path><path d="M10.0663 16.678C10.415 16.5374 10.8087 16.9086 10.6962 17.2629C10.6174 17.6173 10.1225 17.7466 9.88068 17.4767C9.6276 17.2461 9.73446 16.7737 10.0663 16.678V16.678ZM10.37 17.0324C10.2631 17.0942 10.2856 17.2686 10.4037 17.3079C10.5162 17.3585 10.6512 17.2236 10.6006 17.1111C10.5724 17.0211 10.4543 16.9761 10.37 17.0324ZM13.5026 17.3417C13.8513 17.2011 14.2506 17.5666 14.1325 17.9266C14.0537 18.2753 13.5644 18.4102 13.317 18.1459C13.0639 17.9153 13.1707 17.4429 13.5026 17.3417ZM13.8006 17.7016C13.7163 17.7579 13.7163 17.8985 13.8006 17.9547C13.8962 18.0278 14.0425 17.9434 14.0425 17.8253C14.0481 17.7072 13.9019 17.6229 13.8006 17.7016Z"></path></svg>
+    <span>NotABug</span>
+  {% endset %}
+
+  <title>{{ title }}</title>
+  <link rel="shortcut icon" type="image/png" href="{{ favicon }}">
+</head>
+<body>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="{{ favicon }}" alt="My Lair" width="48">
+    <p>Koshmar</p>
+  </a>
+  <p class="device-notification--message">{{ gettext("This site has so much to offer that we must request you find a larger screen. You won't be disappointed.") }}</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="{{ favicon }}" alt="My Lair">
+            <p>Koshmar</p>
+          </a>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>{{ gettext("Home") }}</span></li>
+            <li><span>{{ gettext("About me") }}</span></li>
+            <li><span>{{ gettext("Interests") }}</span></li>
+            <li><span>{{ gettext("Projects") }}</span></li>
+            <li><span>{{ gettext("Checker") }}</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div id="home" class="intro">
+              <div class="intro--banner">
+                <h1>{{ gettext("My Lair") }}</h1>
+                <h2><br>{{ gettext("My Projects") }}<br>{{ gettext("My experience") }}<br>{{ gettext("My Interests") }}</h2>
+                <img class="img-welcome" src="{{ url_for('static', filename='img/introduction-visual.png') }}" alt="Welcome">
+              </div>
+              <div class="intro--options">
+                <a href="#">
+                  <h3>{{ gettext("What is the site about?") }}</h3>
+                  <p>{{ gettext("The site was created to store my experience and my projects.") }}</p>
+                </a>
+                <a href="#">
+                  <h3>{{ gettext("A personal website?") }}</h3>
+                  <p>{{ gettext("I don't like sites without functionality, so there are some features here.") }}</p>
+                </a>
+                <a href="https://github.com/BuckyMaler/Global" target="_blank">
+                  <h3>{{ gettext("Did you write the website template yourself?") }}</h3>
+                  <p>{{ gettext("No. The original site template was taken from here. Having remade it for myself, I got this") }}</p>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>{{ gettext("About me") }}</h2>
+                <p>
+                    {{ gettext("Hello Kids! I, Koshmar, am a young programmer who loves to code in my spare time. I do hate html and css. And I'm also a humorist! The types of humor I use are: absurd, rude, grotesque, hacker, black, satirical, sarcastic, dry and green.") }}
+                </p>
+                <div id="skils">
+                  <h4>HTML</h4>
+                  <div class="progressbar">
+                    <div style="width: 60%"><span>60%</span></div>
+                  </div>
+
+                  <h4>CSS</h4>
+                  <div class="progressbar">
+                    <div style="width: 40%"><span>40%</span></div>
+                  </div>
+
+                  <h4>JavaScript</h4>
+                  <div class="progressbar">
+                    <div style="width: 70%"><span>70%</span></div>
+                  </div>
+
+                  <h4>Python</h4>
+                  <div class="progressbar">
+                    <div style="width: 80%"><span>80%</span></div>
+                  </div>
+
+                  <h4>C & C++</h4>
+                  <div class="progressbar">
+                    <div style="width: 35%"><span>35%</span></div>
+                  </div>
+
+                  <h4>Java</h4>
+                  <div class="progressbar">
+                    <div style="width: 20%"><span>20%</span></div>
+                  </div>
+
+                  <h4>Go</h4>
+                  <div class="progressbar">
+                    <div style="width: 20%"><span>20%</span></div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card card-about">
+                <div class="card-header">
+                  {% if user["user"]["banner"] %}
+                    {% set banner_url = user["user"]["banner_url"] %}
+                    <div style="background: url({{ banner_url }}); --darkreader-inline-bgcolor: rgba(0, 0, 0, 0);" class="banner-img" data-darkreader-inline-bgcolor=""></div>
+                  {% else %}
+                    <div class="banner" style="background-color: {{ user['user']['banner_color'] }};"></div>
+                  {% endif %}
+                </div>
+                <div class="card-body">
+                  <div class="profile-header">
+                    <div class="profil-logo">
+                      <img src="{{ user['user']['avatar_url'] }}">
+                    </div>
+                    <div class="badges-container">
+                      {% for badge in user["badges"] %}
+                        <div class="badge-item">
+                          <img src="{{ badge['icon_url'] }}" alt="">
+                          <div class="tooltip tooltip-up">{{ badge["description"] }}</div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="profile-body">
+                    <div class="username">
+                      {% if user['user']['global_name'] %}
+                        {{ user['user']['global_name'] }}
+                      {% else %}
+                        {{ user['user']['username'] }}
+                      {% endif %}
+                      {% if user['user']['discriminator'] != "0" %}
+                        <span>#{{ user['user']['discriminator'] }}</span>
+                      {% endif %}
+                    </div>
+                    <p class="username_foot">{{ user['user']['username'] }}</p>
+                    <p class="pronouns">{{ user['user_profile']['pronouns'] }}</p>
+                    <hr>
+                    <div class="basic-infos">
+                      <div class="category-title">About Me</div>
+                      <p>{{ user['user']['bio']|safe }}</p>
+                    </div>
+                    <div class="basic-infos">
+                      <div class="category-title">Member Since</div>
+                      <p>{{ user['user']['creation_date'] }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="l-section section">
+            <div class="about interests">
+                <h2>{{ gettext("My Interests") }}</h2>
+                {% set discord_api %}
+                  <div class="td-content">
+                    <img src="{{ url_for('static', filename='img/discord.png') }}">
+                    <h3>Discord API</h3>
+                    <p>{{ gettext("I really like to create any projects related to the Discord API. My Botnet uses the Discord API, Boticord uses it, I have bots written thanks to the Discord API, and even this site uses it to check tokens!") }}</p>
+                  </div>
+                {% endset %}
+                {% set desktop_app %}
+                  <div class="td-content">
+                    <img src="{{ url_for('static', filename='img/desktop-app.png') }}">
+                    <h3>{{ gettext("Desktop Application Development") }}</h3>
+                    <p>{{ gettext("Application development is a fun activity. To make a beautiful design, to add functionality, to make all the possibilities for use - it's a difficult task, but also very interesting.") }}</p>
+                  </div>
+                {% endset %}
+                {% set automation %}
+                  <div class="td-content">
+                    <img src="{{ url_for('static', filename='img/script.png') }}">
+                    <h3>{{ gettext("Automation") }}</h3>
+                    <p>{{ gettext("I am a person who transfers all the monotonous work for the PC into the hands of the code. I'm tired of having to go to the browser every time and find the music - I created MSOC, I'm tired of opening the console every time to pause the MOC - I created xfce4-moc-plugin") }}</p>
+                  </div>
+                {% endset %}
+                {% set hacking %}
+                  <div class="td-content">
+                    <img src="{{ url_for('static', filename='img/hacking.png') }}" width="48">
+                    <h3>{{ gettext("Hacking") }}</h3>
+                    <p>{{ gettext("I think everyone has a craving for obtaining information that is inaccessible to us or for dominating others. Scanning traffic, exploiting vulnerabilities, creating scripts for penetration, ensuring one's anonymity - all this requires broad and deep knowledge") }}</p>
+                  </div>
+                {% endset %}
+                {% set linux %}
+                  <div class="td-content">
+                    <img src="{{ url_for('static', filename='img/linux.png') }}" width="48">
+                    <h3>Linux</h3>
+                    <p>{{ gettext("At the moment I'm sitting on OC Linux, or rather on Arch Linux. The system is very interesting and hides a lot of secrets that you will learn during your time on the PC") }}</p>
+                  </div>
+                {% endset %}
+                {% set embedded_dev %}
+                  <div class="td-content">
+                    <img src="{{ url_for('static', filename='img/embedded.png') }}" width="48">
+                    <h3>{{ gettext("Embedded Development") }}</h3>
+                    <p>{{ gettext("Not so long ago I bought my first Arduino microcontroller. Having written the IRGrub project on it, I wanted to further develop in Embedded Development. For this area, it is not enough just to know, you also need to have good hands") }}</p>
+                  </div>
+                {% endset %}
+
+                {% set array_interests = [discord_api, desktop_app, automation, hacking, linux, embedded_dev] %}
+
+                <table class="table--interests">
+                  {% set ns = namespace(pos=0) %}
+                  {% for interest in array_interests %}
+                    {% if ns.pos == 0 %}
+                      <tr>
+                    {% endif %}
+
+                    <td class="table--interests-td">
+                      {{ interest }}
+                    </td>
+
+                    {% if ns.pos == 2 %}
+                      </tr>
+                      {% set ns.pos = 0 %}
+                    {% else %}
+                      {% set ns.pos = ns.pos + 1 %}
+                    {% endif %}
+                    
+                  {% endfor %}
+                </table>
+
+                <div class="work--lockup interests--slider">
+                  <ul class="slider">
+                    {% set ns = namespace(pos=0) %}
+  
+                    {% if projects|length == 1 %}
+                      {% set ns.pos = 1 %}
+                    {% endif %}
+  
+                    {% for interest in array_interests %}
+                      {% if ns.pos == 0 %}
+                        <li class="slider--item slider--item-left">
+                        {% set ns.pos = 1 %}
+                      {% elif ns.pos == 1 %}
+                        <li class="slider--item slider--item-center">
+                        {% set ns.pos = 2 %}
+                      {% elif ns.pos == 2 %}
+                        <li class="slider--item slider--item-right">
+                        {% set ns.pos = 3 %}
+                      {% else %}
+                        <li class="slider--item">
+                        {% set ns.pos = 4 %}
+                      {% endif %}
+  
+                        {{ interest }}
+                      </li>
+  
+                    {% endfor %}
+                  </ul>
+                  <div class="slider--prev">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                      c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                      c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                    </g>
+                    </svg>
+                  </div>
+                  <div class="slider--next">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </div>
+                </div>
+
+            </div>
+          </li>
+          
+          <li class="l-section section">
+            <div class="work">
+              <h2>{{ gettext("Projects") }}</h2>
+              <div class="work--lockup projects">
+
+                <ul class="slider">
+                  {% set ns.pos = 0 %}
+
+                  {% if projects|length == 1 %}
+                    {% set ns.pos = 1 %}
+                  {% endif %}
+
+                  {% for project in projects %}
+                    {% if ns.pos == 0 %}
+                      <li class="slider--item slider--item-left">
+                      {% set ns.pos = 1 %}
+                    {% elif ns.pos == 1 %}
+                      <li class="slider--item slider--item-center">
+                      {% set ns.pos = 2 %}
+                    {% elif ns.pos == 2 %}
+                      <li class="slider--item slider--item-right">
+                      {% set ns.pos = 3 %}
+                    {% else %}
+                      <li class="slider--item">
+                      {% set ns.pos = 4 %}
+                    {% endif %}
+
+                      <div class="slider--item-image">
+                        <img src="{{ url_for('static', filename=project.icon) }}" alt="Demo">
+                      </div>
+                        
+                      <p class="slider--item-title">{{ project.title }}</p>
+                      <p class="slider--item-description">{{ project.description }}</p>
+                      {% if project.urls %} 
+                        {% if project.urls.github %}
+                          <a class="btn-url" href="{{ project.urls.github }}" target="_blank" role="button">
+                            {{ github_btn }}
+                          </a>
+                        {% endif %}
+                      
+                        {% if project.urls.notabug %}
+                          <a class="btn-url" href="{{ project.urls.notabug }}" target="_blank" role="button">
+                            {{ notabug_btn }}
+                          </a>
+                        {% endif %}
+                      {% else %}
+                          <a href="#">{{ gettext("Links not found") }}</a>
+                      {% endif %}
+                    </li>
+
+                  {% endfor %}
+                </ul>
+                
+                <div class="slider--prev">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                  </g>
+                  </svg>
+                </div>
+                <div class="slider--next">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="tools-box">
+                  <h2>{{ gettext("Discord Token Checker Online Without Viruses") }}</h2>
+                  <input id="user-token-input" placeholder="Discord user token">
+                  <button class="btn" id="user-token-check">Check</button>
+
+                  <div class="container-grid" >
+                    <div class="container--info-sliders">
+                      <div class="sumpl-info" id="friends" style="visibility: hidden;">
+                        <h3>{{ gettext("Friends") }}</h3>
+                        <div class="pre-slider-div friends">
+                          <div class="slider--prev">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                            <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                              <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                              c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                              c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                            </g>
+                            </svg>
+                          </div>
+
+                          <ul class="slider">
+                          </ul>
+                          
+                          <div class="slider--next">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                            <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                              <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                            </g>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="sumpl-info" id="dm-channels" style="visibility: hidden;">
+                        <h3>{{ gettext("DM Channels") }}</h3>
+                        <div class="pre-slider-div dm-channels">
+                            <div class="slider--prev">
+                              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                              <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                                <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                                c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                                c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                              </g>
+                              </svg>
+                            </div>
+
+                            <ul class="slider">
+                            </ul>
+
+                            <div class="slider--next">
+                              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                              <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                                <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                              </g>
+                              </svg>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sumpl-info" id="guilds" style="visibility: hidden;">
+                      <h3>{{ gettext("Guilds") }}</h3>
+                      <div class="pre-slider-div guilds">
+                        <div class="slider--prev">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                          <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                            <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                            c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                            c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                          </g>
+                          </svg>
+                        </div>
+
+                        <ul class="slider">
+                        </ul>
+
+                        <div class="slider--next">
+                          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                          <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                            <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                          </g>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                    <div class="card card-about" style="visibility: hidden;">
+                      <div class="card-header">
+                        <div class="banner"></div>
+                      </div>
+                      <div class="card-body">
+                        <div class="profile-header">
+                          <div class="profil-logo">
+                            <img>
+                          </div>
+                          <div class="badges-container">
+                          </div>
+                        </div>
+                        <div class="profile-body">
+                          <div class="username">
+                          </div>
+                          <p class="username_foot"></p>
+                          <p class="pronouns"></p>
+                          <hr>
+                          <div class="basic-infos">
+                            <div class="category-title">{{ gettext("About him") }}</div>
+                            <p></p>
+                          </div>
+                          <div class="basic-infos">
+                            <div class="category-title">{{ gettext("Member Since") }}</div>
+                            <p></p>
+                          </div>
+                          <div class="basic-infos">
+                            <div class="category-title">{{ gettext("Email") }}</div>
+                            <p></p>
+                          </div>
+                          <div class="basic-infos">
+                            <div class="category-title">{{ gettext("Phone") }}</div>
+                            <p></p>
+                          </div>
+                          <div class="basic-infos">
+                            <div class="category-title">{{ gettext("Locale") }}</div>
+                            <p></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="load-content">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="/* margin: auto; *//* background: rgb(241, 242, 243); */display: block;/* --darkreader-inline-bgcolor: #1f2223; *//* --darkreader-inline-bgimage: none; */" width="194px" height="194px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage="">
+                        <path fill="none" stroke="#ff0000" stroke-width="8" stroke-dasharray="156.51924621582032 100.06968200683593" d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z" stroke-linecap="round" style="transform: scale(1); transform-origin: 50px 50px 0px; --darkreader-inline-stroke: #ff1a1a;" data-darkreader-inline-stroke="">
+                          <animate attributeName="stroke-dashoffset" repeatCount="indefinite" dur="0.7633587786259541s" keyTimes="0;1" values="0;256.58892822265625"></animate>
+                        </path>
+                      </svg>
+                      <img src="{{ url_for('static', filename='img/incorrect.png') }}" class="incorrect">
+                      <p></p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">{{ gettext("Home") }}</li>
+    <li>{{ gettext("About me") }}</li>
+    <li>{{ gettext("Interests") }}</li>
+    <li>{{ gettext("Projects") }}</li>
+    <li>{{ gettext("Checker") }}</li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+{% set js_jq = url_for('static', filename='js/vendor/jquery-2.2.4.min.js') %}
+<script>window.jQuery || document.write('<script src="{{ js_jq }}"><\/script>')</script>
+<script src="{{ url_for('static', filename='js/vendor/hammer-2.0.8.js') }}"></script>
+<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tools.js') }}"></script>
+
+<script>
+  const btnGetDisocrdUserWithToken = $("#user-token-check")[0]
+
+  btnGetDisocrdUserWithToken.onclick = () => {
+    contentLoad.css("visibility", "visible")
+    contentLoad.find("svg").css("display", "block")
+    contentLoad.find("img").css("display", "none")
+    toolsBox.find(".sumpl-info").css("visibility", "hidden")
+    toolsBox.find(".card-about").css("visibility", "hidden")
+
+    textLoad.text('{{ gettext("The token is being checked...") }}')
+
+    const inputUserToken = $("#user-token-input")
+    const userToken = inputUserToken.val()
+
+    $.ajax({
+        url: "/api/get/token",
+        type: "POST",
+        data: {
+            token: userToken
+        },
+        success: (userInfo) => {
+            if (userInfo.user != null || userInfo.bot) {
+                createUserProfileCard(userInfo)
+
+                preInitSliders(userInfo.friends, "friends", friendsSlider)
+                preInitSliders(userInfo["dm-channels"], "dm-channels", dmChannelsSlider)
+                preInitSliders(userInfo.guilds, "guilds", guildsSlider)
+
+                contentLoad.css("visibility", "hidden")
+            }
+            else {
+                contentLoad.find("svg").css("display", "none")
+                contentLoad.find("img").css("display", "block")
+
+                textLoad.text('{{ gettext("The token is not valid") }}')
+            }
+        }
+    })
+}
+</script>
+</body>
+</html>

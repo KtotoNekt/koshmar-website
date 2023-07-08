@@ -1,0 +1,6 @@
+.env
+messages.pot
+__pycache__
+venv
+test.py
+messages.mo

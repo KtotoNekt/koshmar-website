@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///home/koshmar/Tools/discord-clone/index.html -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+  </head>
+  <body>
+    <div class="chat">
+      <div class="chat__messages">
+        {% for message in messages %}
+          <div class="message">
+            {% if message.author.avatar %}
+                <img src="https://cdn.discordapp.com/avatars/{{ message.author.id }}/{{ message.author.avatar }}" alt="avatar">
+            {% else %}
+                {% if message.author.discriminator == "0" %}
+                    {% set index = ((message.author['id']|int) // 22**2) % 6 %}
+                {% else %}
+                    {% set index = (message.author["discriminator"]|int) % 5 %}
+
+                {% endif %}
+                <img src="https://cdn.discordapp.com/embed/avatars/{{ index }}.png" alt="avatar">
+            {% endif %}
+                <div class="message__info">
+                    <h4>{{ message.author.global_name if message.author.global_name else message.author.username }} <span class="message__timestamp">{{ message.timestamp }}</span></h4>
+                    <p>{{ message.content }}</p>
+                </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

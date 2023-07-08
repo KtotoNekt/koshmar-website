@@ -1,0 +1,247 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-07-08 22:35+0300\n"
+"PO-Revision-Date: 2023-07-08 22:03+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: app/templates/index.html:15
+msgid "Lair of Koshmar"
+msgstr "Логово Кошмара"
+
+#: app/templates/index.html:38
+msgid ""
+"This site has so much to offer that we must request you find a larger "
+"screen. You won't be disappointed."
+msgstr ""
+"Этот сайт может предложить так много, что мы должны попросить вас найти "
+"экран большего размера. Вы не будете разочарованы."
+
+#: app/templates/index.html:56 app/templates/index.html:532
+msgid "Home"
+msgstr "Дом"
+
+#: app/templates/index.html:57 app/templates/index.html:90
+#: app/templates/index.html:533
+msgid "About me"
+msgstr "Обо мне"
+
+#: app/templates/index.html:58 app/templates/index.html:534
+msgid "Interests"
+msgstr "Интересы"
+
+#: app/templates/index.html:59 app/templates/index.html:305
+#: app/templates/index.html:535
+msgid "Projects"
+msgstr "Проекты"
+
+#: app/templates/index.html:60 app/templates/index.html:536
+msgid "Checker"
+msgstr "Checker"
+
+#: app/templates/index.html:67
+msgid "My Lair"
+msgstr "Моя Берлога"
+
+#: app/templates/index.html:68
+msgid "My Projects"
+msgstr "Мои Проекты"
+
+#: app/templates/index.html:68
+msgid "My experience"
+msgstr "Мой опыт"
+
+#: app/templates/index.html:68 app/templates/index.html:186
+msgid "My Interests"
+msgstr "Мои интересы"
+
+#: app/templates/index.html:73
+msgid "What is the site about?"
+msgstr "О чем сайт?"
+
+#: app/templates/index.html:74
+msgid "The site was created to store my experience and my projects."
+msgstr "Сайт создан для хранения моего опыта и моих проектов."
+
+#: app/templates/index.html:77
+msgid "A personal website?"
+msgstr "Личный сайт?"
+
+#: app/templates/index.html:78
+msgid "I don't like sites without functionality, so there are some features here."
+msgstr ""
+"Я не люблю сайты без функционала, поэтому здесь есть некоторые "
+"особенности."
+
+#: app/templates/index.html:81
+msgid "Did you write the website template yourself?"
+msgstr "Вы сами написали шаблон сайта?"
+
+#: app/templates/index.html:82
+msgid ""
+"No. The original site template was taken from here. Having remade it for "
+"myself, I got this"
+msgstr ""
+"Нет. Исходный шаблон сайта был взят отсюда. Переделав его для себя, я "
+"получил это"
+
+#: app/templates/index.html:92
+msgid ""
+"Hello Kids! I, Koshmar, am a young programmer who loves to code in my "
+"spare time. I do hate html and css. And I'm also a humorist! The types of"
+" humor I use are: absurd, rude, grotesque, hacker, black, satirical, "
+"sarcastic, dry and green."
+msgstr ""
+"Здравствуйте, дети! Я, Кошмар, молодой программист, который любит "
+"программировать в свободное время. Я ненавижу html и css. А еще я "
+"юморист! Виды юмора, которые я использую: абсурдный, грубый, гротескный, "
+"хакерский, черный, сатирический, саркастичный, сухой и зеленый"
+
+#: app/templates/index.html:191
+msgid ""
+"I really like to create any projects related to the Discord API. My "
+"Botnet uses the Discord API, Boticord uses it, I have bots written thanks"
+" to the Discord API, and even this site uses it to check tokens!"
+msgstr ""
+"Мне очень нравится создавать какие либо проекты, связанные с Discord API."
+" Мой Botnet использует Discord API, Boticord его использует, у меня боты "
+"написанные благодаря Discord API, та даже этот сайт использует его для "
+"проверки токенов!"
+
+#: app/templates/index.html:197
+msgid "Desktop Application Development"
+msgstr "Разработка десктопных приложений"
+
+#: app/templates/index.html:198
+msgid ""
+"Application development is a fun activity. To make a beautiful design, to"
+" add functionality, to make all the possibilities for use - it's a "
+"difficult task, but also very interesting."
+msgstr ""
+"Разработка приложений - увлекательное занятие. Сделать красивый дизайн, "
+"добавить функциональность, сделать еще все это удобным для использования "
+"- дело сложное, но и очень интересное"
+
+#: app/templates/index.html:204
+msgid "Automation"
+msgstr "Автоматизация"
+
+#: app/templates/index.html:205
+msgid ""
+"I am a person who transfers all the monotonous work for the PC into the "
+"hands of the code. I'm tired of having to go to the browser every time "
+"and find the music - I created MSOC, I'm tired of opening the console "
+"every time to pause the MOC - I created xfce4-moc-plugin"
+msgstr ""
+"Я человек, который всю монотонную работу за ПК передает в руки коду. Мне "
+"надоело каждый раз заходить в браузер и находить музыку - я создал MSOC, "
+"мне надоело каждый раз открывать консоль, чтобы поставить на паузу MOC - "
+"я создал xfce4-moc-plugin"
+
+#: app/templates/index.html:211
+msgid "Hacking"
+msgstr "Хакинг"
+
+#: app/templates/index.html:212
+msgid ""
+"I think everyone has a craving for obtaining information that is "
+"inaccessible to us or for dominating others. Scanning traffic, exploiting"
+" vulnerabilities, creating scripts for penetration, ensuring one's "
+"anonymity - all this requires broad and deep knowledge"
+msgstr ""
+"Тяга к получению недоступной нам информации или к преобладанию над "
+"другими, думаю, есть у всех. Сканирование трафика, эксплуатация "
+"уязвимостей, создание скриптов для проникновения, обеспечение своей "
+"анонимности - все это требует широких и глубоких знаний"
+
+#: app/templates/index.html:219
+msgid ""
+"At the moment I'm sitting on OC Linux, or rather on Arch Linux. The "
+"system is very interesting and hides a lot of secrets that you will learn"
+" during your time on the PC"
+msgstr ""
+"На данный момент я сижу на OC Linux, а точнее на Arch Linux. Система "
+"очень интересная и кроет в себе очень много тайн, которые ты познаешь в "
+"течении твоего провождения за ПК"
+
+#: app/templates/index.html:225
+msgid "Embedded Development"
+msgstr "Разработка микроконтроллеров"
+
+#: app/templates/index.html:226
+msgid ""
+"Not so long ago I bought my first Arduino microcontroller. Having written"
+" the IRGrub project on it, I wanted to further develop in Embedded "
+"Development. For this area, it is not enough just to know, you also need "
+"to have good hands"
+msgstr ""
+"Не так давно я приобрел свой первый микроконтроллер Arduino. Написав на "
+"нем проект IRGrub, я захотел дальше развиваться в Embedded Development. "
+"Для этой области не достаточно просто знать, нужно еще иметь хорошие руки"
+
+#: app/templates/index.html:349
+msgid "Links not found"
+msgstr "Ссылки не найдены"
+
+#: app/templates/index.html:380
+msgid "Discord Token Checker Online Without Viruses"
+msgstr "Проверка токенов Discord онлайн без вирусов"
+
+#: app/templates/index.html:387
+msgid "Friends"
+msgstr "Друзья"
+
+#: app/templates/index.html:414
+msgid "DM Channels"
+msgstr "Личные сообщения"
+
+#: app/templates/index.html:442
+msgid "Guilds"
+msgstr "Гильдии"
+
+#: app/templates/index.html:489
+#, fuzzy
+msgid "About his"
+msgstr "О нем"
+
+#: app/templates/index.html:493
+msgid "Member Since"
+msgstr "Дата создания"
+
+#: app/templates/index.html:497
+msgid "Email"
+msgstr "Email"
+
+#: app/templates/index.html:501
+msgid "Phone"
+msgstr "Номер"
+
+#: app/templates/index.html:505
+msgid "Locale"
+msgstr "Язык"
+
+#: app/templates/index.html:557
+msgid "The token is being checked..."
+msgstr "Токен проверяется..."
+
+#: app/templates/index.html:582
+msgid "The token is not valid"
+msgstr "Токен недействителен"
+
+#~ msgid "Discord API"
+#~ msgstr "Discord API"
+

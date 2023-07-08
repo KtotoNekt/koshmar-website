@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <title>Card {{ user["user"]["username"] }}</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+          {% if user["user"]["banner"] %}
+            {% set banner_url = user["user"]["banner_url"] %}
+            <div style="background: url({{ banner_url }}); --darkreader-inline-bgcolor: rgba(0, 0, 0, 0);" class="banner-img" data-darkreader-inline-bgcolor=""></div>
+          {% else %}
+            <div class="banner" style="background-color: {{ user['user']['banner_color'] }};"></div>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <div class="profile-header">
+            <div class="profil-logo">
+              <img src="{{ user['user']['avatar_url'] }}">
+            </div>
+            <div class="badges-container">
+              {% for badge in user["badges"] %}
+                <div class="badge-item">
+                  <img src="{{ badge['icon_url'] }}" alt="">
+                  <div class="tooltip tooltip-up">{{ badge["description"] }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="username">
+              {% if user['user']['global_name'] %}
+                {{ user['user']['global_name'] }}
+              {% else %}
+                {{ user['user']['username'] }}
+              {% endif %}
+              {% if user['user']['discriminator'] != "0" %}
+                <span>#{{ user['user']['discriminator'] }}</span>
+              {% endif %}
+            </div>
+            <p class="username_foot">{{ user['user']['username'] }}</p>
+            <p class="pronouns">{{ user['user_profile']['pronouns'] }}</p>
+            <hr>
+            <div class="basic-infos">
+              <div class="category-title">About Me</div>
+              <p>{{ user['user']['bio']|safe }}</p>
+            </div>
+            <div class="basic-infos">
+              <div class="category-title">Member Since</div>
+              <p>{{ user['user']['creation_date'] }}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
