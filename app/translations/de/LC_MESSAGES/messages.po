@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-07-08 22:35+0300\n"
+"POT-Creation-Date: 2023-07-09 11:58+0300\n"
 "PO-Revision-Date: 2023-07-08 22:03+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -20,77 +20,77 @@ msgstr ""
 
 #: app/templates/index.html:15
 msgid "Lair of Koshmar"
-msgstr ""
+msgstr "Hort von Koshmar"
 
 #: app/templates/index.html:38
 msgid ""
 "This site has so much to offer that we must request you find a larger "
 "screen. You won't be disappointed."
-msgstr ""
+msgstr "Diese Seite hat so viel zu bieten, dass wir Sie bitten müssen, einen größeren Bildschirm zu finden. Sie werden nicht enttäuscht sein."
 
 #: app/templates/index.html:56 app/templates/index.html:532
 msgid "Home"
-msgstr ""
+msgstr "Heim"
 
 #: app/templates/index.html:57 app/templates/index.html:90
 #: app/templates/index.html:533
 msgid "About me"
-msgstr ""
+msgstr "Über mich"
 
 #: app/templates/index.html:58 app/templates/index.html:534
 msgid "Interests"
-msgstr ""
+msgstr "Interessen"
 
 #: app/templates/index.html:59 app/templates/index.html:305
 #: app/templates/index.html:535
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #: app/templates/index.html:60 app/templates/index.html:536
 msgid "Checker"
-msgstr ""
+msgstr "Checker"
 
 #: app/templates/index.html:67
 msgid "My Lair"
-msgstr ""
+msgstr "Mein Versteck"
 
 #: app/templates/index.html:68
 msgid "My Projects"
-msgstr ""
+msgstr "Meine Projekte"
 
 #: app/templates/index.html:68
 msgid "My experience"
-msgstr ""
+msgstr "Meine Erfahrung"
 
 #: app/templates/index.html:68 app/templates/index.html:186
 msgid "My Interests"
-msgstr ""
+msgstr "Meine Interessen"
 
 #: app/templates/index.html:73
 msgid "What is the site about?"
-msgstr ""
+msgstr "Worum geht es auf der Seite?"
 
 #: app/templates/index.html:74
 msgid "The site was created to store my experience and my projects."
-msgstr ""
+msgstr "Die Seite wurde erstellt, um meine Erfahrungen und meine Projekte zu speichern."
 
 #: app/templates/index.html:77
 msgid "A personal website?"
-msgstr ""
+msgstr "Eine persönliche Website?"
 
 #: app/templates/index.html:78
 msgid "I don't like sites without functionality, so there are some features here."
-msgstr ""
+msgstr "Ich mag keine Websites ohne Funktionalität, daher gibt es hier einige Funktionen."
 
 #: app/templates/index.html:81
 msgid "Did you write the website template yourself?"
-msgstr ""
+msgstr "Haben Sie die Website-Vorlage selbst geschrieben?"
 
 #: app/templates/index.html:82
 msgid ""
 "No. The original site template was taken from here. Having remade it for "
 "myself, I got this"
-msgstr ""
+msgstr "No. The original site template was taken from here. Having remade it for myself, I got this"
 
 #: app/templates/index.html:92
 msgid ""
@@ -98,29 +98,29 @@ msgid ""
 "spare time. I do hate html and css. And I'm also a humorist! The types of"
 " humor I use are: absurd, rude, grotesque, hacker, black, satirical, "
 "sarcastic, dry and green."
-msgstr ""
+msgstr "Hallo Kinder! Ich, Koshmar, bin ein junger Programmierer, der es liebt, in meiner Freizeit zu programmieren. Ich hasse HTML und CSS. Und ich bin auch ein Humorist! Die Arten von Humor, die ich verwende, sind: absurd, unhöflich, grotesk, Hacker, schwarz, satirisch, sarkastisch, trocken und grün."
 
 #: app/templates/index.html:191
 msgid ""
 "I really like to create any projects related to the Discord API. My "
 "Botnet uses the Discord API, Boticord uses it, I have bots written thanks"
 " to the Discord API, and even this site uses it to check tokens!"
-msgstr ""
+msgstr "Ich erstelle sehr gerne Projekte, die mit der Discord-API zu tun haben. Mein Botnet verwendet die Discord-API, Boticord verwendet sie, ich habe Bots dank der Discord-API geschrieben, und sogar diese Website verwendet sie, um Token zu überprüfen!"
 
 #: app/templates/index.html:197
 msgid "Desktop Application Development"
-msgstr ""
+msgstr "Entwicklung von Desktop-Anwendungen"
 
 #: app/templates/index.html:198
 msgid ""
 "Application development is a fun activity. To make a beautiful design, to"
 " add functionality, to make all the possibilities for use - it's a "
 "difficult task, but also very interesting."
-msgstr ""
+msgstr "Anwendungsentwicklung ist eine Aktivität, die Spaß macht. Ein schönes Design zu machen, Funktionalität hinzuzufügen, alle Nutzungsmöglichkeiten zu nutzen - es ist eine schwierige Aufgabe, aber auch sehr interessant."
 
 #: app/templates/index.html:204
 msgid "Automation"
-msgstr ""
+msgstr "Automatisierung"
 
 #: app/templates/index.html:205
 msgid ""
@@ -128,11 +128,11 @@ msgid ""
 "hands of the code. I'm tired of having to go to the browser every time "
 "and find the music - I created MSOC, I'm tired of opening the console "
 "every time to pause the MOC - I created xfce4-moc-plugin"
-msgstr ""
+msgstr "Ich bin ein Mensch, der die ganze monotone Arbeit für den PC in die Hände des Codes legt. Ich bin es leid, jedes Mal in den Browser gehen und die Musik finden zu müssen - ich habe MSOC erstellt, ich bin es leid, jedes Mal die Konsole zu öffnen, um das MOC anzuhalten - Ich habe xfce4-moc-plugin erstellt"
 
 #: app/templates/index.html:211
 msgid "Hacking"
-msgstr ""
+msgstr "Hackend"
 
 #: app/templates/index.html:212
 msgid ""
@@ -140,18 +140,18 @@ msgid ""
 "inaccessible to us or for dominating others. Scanning traffic, exploiting"
 " vulnerabilities, creating scripts for penetration, ensuring one's "
 "anonymity - all this requires broad and deep knowledge"
-msgstr ""
+msgstr "I think everyone has a craving for obtaining information that is inaccessible to us or for dominating others. Scanning traffic, exploiting vulnerabilities, creating scripts for penetration, ensuring one's anonymity - all this requires broad and deep knowledge"
 
 #: app/templates/index.html:219
 msgid ""
 "At the moment I'm sitting on OC Linux, or rather on Arch Linux. The "
 "system is very interesting and hides a lot of secrets that you will learn"
 " during your time on the PC"
-msgstr ""
+msgstr "Im Moment sitze ich auf OC Linux, oder besser gesagt auf Arch Linux. Das System ist sehr interessant und verbirgt viele Geheimnisse, die Sie während Ihrer Zeit am PC lernen werden"
 
 #: app/templates/index.html:225
 msgid "Embedded Development"
-msgstr ""
+msgstr "Embedded-Entwicklung"
 
 #: app/templates/index.html:226
 msgid ""
@@ -159,55 +159,55 @@ msgid ""
 " the IRGrub project on it, I wanted to further develop in Embedded "
 "Development. For this area, it is not enough just to know, you also need "
 "to have good hands"
-msgstr ""
+msgstr "Vor nicht allzu langer Zeit habe ich meinen ersten Arduino-Mikrocontroller gekauft. Nachdem ich das IRGrub-Projekt darüber geschrieben hatte, wollte ich mich in der Embedded-Entwicklung weiterentwickeln. Für diesen Bereich reicht es nicht aus, nur zu wissen, man muss auch gute Hände haben"
 
 #: app/templates/index.html:349
 msgid "Links not found"
-msgstr ""
+msgstr "Links nicht gefunden"
 
 #: app/templates/index.html:380
 msgid "Discord Token Checker Online Without Viruses"
-msgstr ""
+msgstr "Discord Token Checker online ohne Viren"
 
 #: app/templates/index.html:387
 msgid "Friends"
-msgstr ""
+msgstr "Freunde"
 
 #: app/templates/index.html:414
 msgid "DM Channels"
-msgstr ""
+msgstr "DM-Kanäle"
 
 #: app/templates/index.html:442
 msgid "Guilds"
-msgstr ""
+msgstr "Gilden"
 
 #: app/templates/index.html:489
-msgid "About his"
-msgstr ""
+msgid "About him"
+msgstr "Über ihn"
 
 #: app/templates/index.html:493
 msgid "Member Since"
-msgstr ""
+msgstr "Mitglied seit"
 
 #: app/templates/index.html:497
 msgid "Email"
-msgstr ""
+msgstr "E-Mail"
 
 #: app/templates/index.html:501
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: app/templates/index.html:505
 msgid "Locale"
-msgstr ""
+msgstr "Gebietsschema"
 
 #: app/templates/index.html:557
 msgid "The token is being checked..."
-msgstr ""
+msgstr "Der Token wird überprüft..."
 
 #: app/templates/index.html:582
 msgid "The token is not valid"
-msgstr ""
+msgstr "Das Token ist ungültig"
 
 #~ msgid "Идет проверка токена..."
 #~ msgstr ""
@@ -224,5 +224,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Discord API"
+#~ msgstr ""
+
+#~ msgid "About his"
 #~ msgstr ""
 
