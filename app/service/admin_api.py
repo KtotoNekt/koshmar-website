@@ -24,7 +24,6 @@ def manage_projects():
         isSucces = False
 
         if request.method != "POST":
-            print(request.json)
             if not request.json.get("project_id") and request.json.get("project_id") != 0:
                 return "Error: Project ID not specified "
             else:

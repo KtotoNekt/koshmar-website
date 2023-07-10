@@ -18,13 +18,13 @@ def home():
     if locale != "en":
         filter_projects = []
         for project in PROJECTS:
+            _pr = project.copy()
             if project.get("description-translations"):
                 if project["description-translations"].get(locale):
-                    project["description"] = project["description-translations"][locale]
-            filter_projects.append(project)
+                    _pr["description"] = project["description-translations"][locale]
+            filter_projects.append(_pr)
     else:
         filter_projects = PROJECTS.copy()
-
 
     return render_template("index.html", user=get_user_self(), projects=filter_projects)
 
@@ -80,5 +80,4 @@ def get_info_from_token():
     if user.get("user") != None or user.get("bot"):
         resp.set_cookie("token", token)
 
-    pprint(user)
     return resp
