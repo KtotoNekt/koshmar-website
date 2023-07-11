@@ -46,7 +46,7 @@ def manage_projects():
             PROJECT = None
             for _project in PROJECTS:
                 if _project["id"] == project_id:
-                    PROJECT = _project
+                    PROJECT = _project.copy()
             
             if PROJECT == None:
                 return 'Project Not Found'
@@ -59,7 +59,7 @@ def manage_projects():
                 else:
                     PROJECT[key] = project[key]
 
-            project = PROJECT
+            project = PROJECT.copy()
 
             PROJECTS.append(PROJECT)
             isSucces = True
@@ -67,7 +67,7 @@ def manage_projects():
             PROJECT = None
             for _project in PROJECTS:
                 if _project["id"] == project_id:
-                    PROJECT = _project
+                    PROJECT = _project.copy()
             
             if PROJECT == None:
                 return 'Project Not Found'
@@ -78,7 +78,7 @@ def manage_projects():
         else:
             for _project in PROJECTS:
                 if _project["id"] == project_id:
-                    project = _project
+                    project = _project.copy()
 
             if not project:
                 return "Project Not Found"
